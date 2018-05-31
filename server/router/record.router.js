@@ -3,12 +3,12 @@ const router = express.Router();
 const Record = require('../modules/models/record.schema');
 
 //make some records 
-const recordArray = [
-    new Record (`Beatles`, `Abbey Road`, 1969, [`Rock`]),
-    new Record (`Michael Jackson`, `Off the Wall`, 1979, [`Pop`]),
-    new Record (`Prince`, `Purple Rain`, 1984, [`Pop`]),
-    new Record (`Cibo Matto`, `Viva la Woman!`, 1990, [`JPop`]),
-]
+// const recordArray = [
+//     new Record (`Beatles`, `Abbey Road`, 1969, [`Rock`]),
+//     new Record (`Michael Jackson`, `Off the Wall`, 1979, [`Pop`]),
+//     new Record (`Prince`, `Purple Rain`, 1984, [`Pop`]),
+//     new Record (`Cibo Matto`, `Viva la Woman!`, 1990, [`JPop`]),
+// ]
 //making request from our record to 
 router.get('/', (req,res) => {
     Record.find({})
@@ -59,7 +59,7 @@ router.delete('/', (req,res) => {
 router.put('/', (req,res) => {
     //Put can send data, so getting id from req.body
     let recordData = req.body;
-    record.findByIdAndUpdate(req.body._id, recordData)
+    Record.findByIdAndUpdate(req.body._id, recordData)
     .then( ()=> {
         console.log(`Updated record with id ${recordData._id}`);
         res.sendStatus(200);
