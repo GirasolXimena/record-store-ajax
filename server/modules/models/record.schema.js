@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const recordSchema = new Schema({
     artist: {type: String, required: true, unique: true},
     album: {type: String, required: true, unique: true},
-    year: {type: Date, required: true},
+    year: {type: Number, required: true},
     genreList: {type: String}
 });
 

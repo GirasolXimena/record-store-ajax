@@ -1,8 +1,8 @@
 class Record {
 
-    constructor (artist, albumName, year, genreList){
+    constructor (artist, album, year, genreList){
         this.artist = artist;
-        this.albumName = albumName;
+        this.album = album;
         this.year = year;
         this.genreList = genreList;
 
