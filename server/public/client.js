@@ -73,16 +73,16 @@ myApp.controller('RecordController', ['$http', function($http) {
     vm.removeRecord = function( index  ) {
         recordToDelete = vm.records[index];
         console.log(vm.records[index]._id);
-        // $http({
-        //     method: 'DELETE',
-        //     url: `/record?_id=${recordToDelete._id}`
-        // }).then(function(response) {
-        //     console.log('deleted record', recordToDelete);
-        //     vm.getAllRecords();
-        // }).catch(function(error) {
-        //     console.log('error deleting record', error);
+        $http({
+            method: 'DELETE',
+            url: `/record?_id=${recordToDelete._id}`
+        }).then(function(response) {
+            console.log('deleted record', recordToDelete);
+            vm.getAllRecords();
+        }).catch(function(error) {
+            console.log('error deleting record', error);
             
-        // })
+        })
     }
     vm.getAllRecords();    
 }]);
